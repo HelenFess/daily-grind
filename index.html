@@ -59,24 +59,14 @@
 	</header>
     <main>
 		 <header><h3 class="slogan">You drink our coffee, we make large bucks!</h3></header>
+		<div id="coffeeTarget"></div>
+		<!--
         <p>
     		 <img src="images/pumpkin-spice-latte.jpg" alt="Our Pumpkin Spice Latte tastes great on a Fall Day!" id="coffee" />
-            <strong class="feature">Monday's Coffee Special:</strong> Monday's daily coffee special is <strong class="feature">Pumpkin Spice Latte</strong>, which makes us wish it was always Fall, as this is one of our top sellers!</p>
-        <p><span class="feature">Pumpkin Spice is </span> Gluten-free selfies normcore chillwave. Listicle 90's chambray, seitan cold-pressed try-hard Etsy authentic flexitarian vinyl. Meditation bespoke freegan, single-origin coffee cred seitan 90's gentrify brunch Williamsburg squid cold-pressed. Brooklyn readymade Tumblr wayfarers ethical.</p>
-        <p><span class="feature">Enjoy Pumpkin Spice with our </span> Polaroid iPhone plaid, Pitchfork Shoreditch paleo. Hashtag keytar chia scenester Pinterest, semiotics tousled food truck. YOLO scenester deep v, taxidermy paleo quinoa McSweeney's Carles VHS mustache Williamsburg gluten-free readymade cold-pressed. Truffaut Thundercats Schlitz, listicle organic Brooklyn paleo squid asymmetrical readymade migas gluten-free Austin.</p>
-		 <p>
-		 <b>At LargeBuck$ we aspire to: </b>Aesthetic gentrify YOLO McSweeney's typewriter single-origin coffee. Slow-carb hella listicle lomo, Helvetica single-origin coffee butcher stumptown. Chambray try-hard church-key mumblecore, tote bag PBR cardigan. Retro Austin Brooklyn, blog Intelligentsia gentrify jean shorts sartorial bicycle rights gastropub. Aesthetic wayfarers Pitchfork, tattooed Carles quinoa meh leggings distillery pork belly banjo. Umami cred lumbersexual skateboard, pork belly Tumblr vegan letterpress. Fixie bicycle rights butcher chillwave, gluten-free health goth Echo Park locavore whatever.
-
-		 </p>
-		<p>
-		Gluten-free selfies normcore chillwave. Listicle 90's chambray, seitan cold-pressed try-hard Etsy authentic flexitarian vinyl. Meditation bespoke freegan, single-origin coffee cred seitan 90's gentrify brunch Williamsburg squid cold-pressed. Brooklyn readymade Tumblr wayfarers ethical. Biodiesel VHS Godard High Life, tousled Banksy craft beer. Mlkshk direct trade locavore, mumblecore keytar artisan hashtag fap. Cred cronut Brooklyn, locavore art party small batch PBR semiotics ennui kitsch taxidermy mlkshk stumptown.
+            <strong> Monday's Coffee Special:</strong> Monday's daily coffee special is <strong>Pumpkin Spice Latte</strong>, which makes us wish it was always Fall, as this is one of our top sellers!
 		</p>
-		<p>
-		Polaroid iPhone plaid, Pitchfork Shoreditch paleo. Hashtag keytar chia scenester Pinterest, semiotics tousled food truck. YOLO scenester deep v, taxidermy paleo quinoa McSweeney's Carles VHS mustache Williamsburg gluten-free readymade cold-pressed. Truffaut Thundercats Schlitz, listicle organic Brooklyn paleo squid asymmetrical readymade migas gluten-free Austin. Etsy Wes Anderson 8-bit retro, polaroid synth paleo banh mi before they sold out Vice. Bushwick fap Intelligentsia, whatever Etsy High Life Kickstarter migas retro Banksy YOLO Carles yr raw denim. Gluten-free fixie taxidermy pop-up, actually Kickstarter flannel put a bird on it master cleanse.
-		</p>
-		<p>
-		Text provided by <a href="http://hipsum.co/" target="_blank">Hipster Ipsum</a>
-		</p>
+       
+	-->
      </main>
     <footer>
       <small>&copy; 2014-2015, All Rights Reserved ~
@@ -99,52 +89,130 @@
         A unique color that supports the image and paragraph of content
 	*/
 
+	function coffeeTemplate(coffee){
+		let myReturn = "";
+
+		myReturn += `<p>
+            <img src="images/${coffee.pic}" alt="Our Pumpkin Spice Latte tastes great on a Fall Day!" id="coffee" />
+           <strong>Monday's Coffee Special:</strong> Monday's daily coffee special is <strong>Pumpkin Spice Latte</strong>, which makes us wish it was always Fall, as this is one of our top sellers!
+       </p>`;
+
+		return myReturn;
+	}
+
+
 	let myDate = new Date();
 	let today = myDate.getDay();
-
+	let coffee = ""
 	// REMOVE THE FOLLOWING WHEN NOT TESTING
-	//today=0;
+	// today=0;
 	
 	switch(today){
 		case 0:
 			today = "Sunday";
+
+			coffee = {
+			coffee: "Bubble tea",
+			alt: "This is a pic of a Bubble tea",
+			description: `I love Bubble tea! It's bubbly!`,
+			pic: "bubble-tea.jpg",
+			color: "purple",
+			weekday: "Sunday"
+			}
 		break;
 
 		case 1:
 			today = "Monday";
+
+			coffee = {
+			coffee: "Caramel latte",
+			alt: "This is a pic of a Caramel latte",
+			description: `I love Caramel! It's my fav!`,
+			pic: "caramel-latte.jpg",
+			color: "tan",
+			weekday: "Monday"
+			}
+
+
 		break;
 
 		case 2:
 			today = "Tuesday";
+
+			coffee = {
+			coffee: "Cold brew",
+			alt: "This is a pic of a Cold brew",
+			description: `I love it! It's nice and cool!`,
+			pic: "bubble-tea.jpg",
+			color: "brown",
+			weekday: "Tuesday"
+			}
+
 		break;
 
 		case 3:
 			today = "Wednesday";
+
+
+
+		 	coffee = {
+			coffee: "Pumpkin Spice Latte",
+			alt: "This is a pic of a Pumpkin Spice Latte",
+			description: `Pumkin Spice Latees are out best seller!`,
+			pic: "pumpkin-spice-latte.jpg",
+			color: "orange",
+			weekday: "Wednesday"
+			}
+	
+
 		break;
 
 		case 4:
 			today = "Thursday";
+
+			coffee = {
+			coffee: "Drip",
+			alt: "This is a pic of a Drip",
+			description: `I love Drip!`,
+			pic: "drip.jpg",
+			color: "sage",
+			weekday: "Thursday"
+			}
+
 		break;
 
 		case 5:
 			today = "Friday";
+
+			coffee = {
+			coffee: "Frappaccino",
+			alt: "This is a pic of a Frappaccino",
+			description: `I love it, its like milkshake!`,
+			pic: "frappaccino.jpg",
+			color: "mustard",
+			weekday: "Friday"
+			}
+			
 		break;
 
 		case 6:
 			today = "Saturday";
+
+			coffee = {
+			coffee: "Mocha",
+			alt: "This is a pic of a Mocha",
+			description: `I love Mocha, it's nice and warm!`,
+			pic: "bubble-tea.jpg",
+			color: "blue",
+			weekday: "Saturday"
+			}
+
 		break;
 	}
 
-	console.log(today);
+	document.getElementById("coffeeTarget").innerHTML = coffeeTemplate(coffee);
 
-	let coffee = {
-		coffee: "Pumpkin Spice Latte",
-		alt: "This is a pic of a Pumpkin Spice Latte",
-		description: `Pumkin Spice Latees are out best seller!`,
-		pic: "pumpkin-spice-latte.jpg",
-		color: "orange",
-		weekday: "Wednesday"
-	}
+	console.log(today);
 
 	console.log(coffee);
 
