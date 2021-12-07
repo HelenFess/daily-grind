@@ -93,8 +93,8 @@
 		let myReturn = "";
 
 		myReturn += `<p>
-            <img src="images/${coffee.pic}" alt="Our Pumpkin Spice Latte tastes great on a Fall Day!" id="coffee" />
-           <strong>Monday's Coffee Special:</strong> Monday's daily coffee special is <strong>Pumpkin Spice Latte</strong>, which makes us wish it was always Fall, as this is one of our top sellers!
+            <img src="images/${coffee.pic}" alt="${coffee.alt}!" id="coffee" />
+           <strong>${coffee.weekday}'s Coffee Special:</strong>${coffee.weekday}'s daily coffee special is <strong>${coffee.coffee}</strong>, ${coffee.description}
        </p>`;
 
 		return myReturn;
@@ -143,7 +143,7 @@
 			coffee: "Cold brew",
 			alt: "This is a pic of a Cold brew",
 			description: `I love it! It's nice and cool!`,
-			pic: "bubble-tea.jpg",
+			pic: "cold-brew.jpg",
 			color: "brown",
 			weekday: "Tuesday"
 			}
@@ -160,7 +160,7 @@
 			alt: "This is a pic of a Pumpkin Spice Latte",
 			description: `Pumkin Spice Latees are out best seller!`,
 			pic: "pumpkin-spice-latte.jpg",
-			color: "orange",
+			color: "orange", 
 			weekday: "Wednesday"
 			}
 	
